@@ -49,3 +49,11 @@ Why: for `a`, `add()` makes `_items` 1, then `a.items = -5` is ignored because t
 Real output:
 
 Was I right?
+
+Was I right? Yes, my prediction was right. The first print showed 1 and the second showed 5, the same as I predicted.
+
+What I learned from this part:
+
+A setter can have a rule. a.items = -5 did nothing because the setter only saves values that are 0 or more, so a stayed at 1 and the program did not crash.
+BigBag overrides add() and calls super.add() two times, so every call to b.add() adds 2. Two calls gave 4.
+b.items = b.items + 1 reads the getter (4), adds 1, and gives 5 to the setter. The setter accepted it because 5 is not below 0.
